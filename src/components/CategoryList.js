@@ -1,9 +1,29 @@
 import React from 'react'
 
-class CategoryList extends React.Component
+const DUMMY_DATA = [{
+    id: 'wyzywienie',
+    text: 'wyzywienie'
+},
 {
-    render (){
-        return ( <div>" this is the CategoryList Component"</div> );
+    id: 'transport',
+    text: 'transport'
+}]
+class CategoryList extends React.Component {
+    constructor() {
+        super()
+        this.state = {}
+    }
+    render() {
+        return (<select>
+            {
+                DUMMY_DATA.map((message, index) => {
+                    return (
+                        <option value="{message.id}">{message.text}</option>
+                    )
+                }
+                )
+            }
+        </select>);
     }
 }
 
